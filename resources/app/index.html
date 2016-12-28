@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="margin: 0px">
+
+ <webview id="webview" src="app/index.html" style="position: fixed; width:100%; height:100%"></webview> 
+<script>
+    var ipcRenderer=require('electron').ipcRenderer;
+    var webview = document.getElementById('webview');
+    var Menu = require('electron').remote.Menu;
+    function loadUrl(url) {
+        return function () {
+            webview.src = url;
+        }
+    }
+    var template = [
+        {},{},
+        {
+            label: '编辑',
+            submenu: [
+                {
+                    label: '关闭',
+                    click:function(){
+                    ipcRenderer.send('window-all-closed');
+                    }
+                },
+                {
+                    type: 'separator'
+                },
+                {
+                    label: '最大化',
+                    click:function(){
+                    ipcRenderer.send('show-window');
+                    }
+                },
+                {
+                    type: 'separator'
+                },
+                {
+                    label: '最小化',
+                    click:function(){
+                    	ipcRenderer.send('hide-window');
+                    }
+                },
+                {
+                    type: 'separator'
+                },
+                {
+                    label: '还原',
+                    click:function(){
+                        console.log(window.location);
+                    }
+                },
+                {
+                    type: 'separator'
+                },
+                {
+                    label: '刷新',
+                    click:function(){
+                    	window.locaiton.reload();
+                    }
+                }
+
+            ]
+        },{},
+        {
+            label: '配置',
+            submenu:[
+                {
+                    label: '后台配置',
+                    click:loadUrl("app.html")
+                },
+                {
+                    type: 'separator'
+                },
+                {
+                    label: '刷新',
+                    click:function(){
+
+                    }
+                }
+            ]
+        },{},
+        {
+            label: '帮助',
+            submenu:[
+                {
+                    label: '检查更新',
+                    click:loadUrl('file:///F:/ccb-desk/resources/app/app2.html')
+                },
+                {
+                    label: '关于地壳',
+                }
+            ]
+        },{},{
+        	label: '退出',
+            click:function(){
+            ipcRenderer.send('window-all-closed');
+            }
+        }
+    ];
+    var menu = Menu.buildFromTemplate(template);
+    Menu.setApplicationMenu(menu);
+</script>
+</body>
+</html>

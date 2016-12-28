@@ -1,0 +1,73 @@
+/* homepage */
+
+body, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, p, input, select, textarea, form {
+	margin: 0;
+	padding: 0
+}
+body {
+	font: 18px/1.5 youyuan;
+	color:#1f7cce;
+	background: url(../image/bg.png) no-repeat;
+	width: 1080px;
+	height: 1920px;
+}
+img {
+	border: none
+}
+ul, ol {
+	list-style: none
+}
+input, select, textarea {
+	outline: none;
+	border: none;
+	background: none
+}
+textarea {
+	resize: none
+}
+a {
+	text-decoration: none
+}
+.clearfix:after {
+	content:'';
+	*display: block;
+	*clear: both
+}
+.clearfix {
+	zoom: 1
+}
+::selection {
+	background-color: #669900;
+	color: #ffffff;
+	text-shadow: none
+}
+::-moz-selection {
+	background-color: #669900;
+	color: #ffffff;
+	text-shadow: none
+}
+@font-face {
+	font-family: youyuan;
+	src: url("../fonts/youyuan.ttf") format("TrueType")
+}
+
+
+/*  home  */
+.btn {width: 130px;height: 44px;line-height: 44px;text-align: center; background-color: #bdbbf1;margin-top: 20px;}
+.cont {position:absolute; left: 125px;top: 110px; width: 840px;height: 560px;overflow: hidden;display: none;}
+
+.contlist {position: relative;width: 840px;height: 560px;display: none;}
+
+.homecont-pre {position: absolute;left: 50px;top: 335px; width: 60px;height: 56px;background: url('../image/arrow-left.png');}
+.homecont-next {position: absolute;left: 980px;top:335px;width: 60px;height: 56px;background: url('../image/arrow-right.png');}
+.dirbtn { display: none; }
+
+.home-header {width: 1080px;height: 90px;overflow: hidden;}
+.home-voice {position: absolute; width: 55px;height: 66px;background: url('../image/huatong-icon.png');left: 26px;top:33px;}
+.voice-cont {position: absolute;  width: 890px;height: 40px;line-height: 40px; left: 90px;top:44px;overflow: hidden; color:#1f7cce;font-size: 18px;}
+.home-button {position: absolute; width: 51px;height: 52px;background: url('../image/home-icon.png');top: 36px;left:985px;}
+.home-anser {position: absolute;top: 92px;left: 180px;height: 60px;width: 700px;font-size: 18px;}
+.home-logo {position: absolute;left: 790px;top: 645px;width: 281px;height: 51px;background: url('../image/jianhanglogo.png');}
+.pingbao {position: absolute;left: 0px;top: 0px; width: 1080px;height: 706px;background: url("../image/bg.png") no-repeat;z-index: 9999;}
+.pingbao-cont {position: relative;left: 160px;top:90px;width: 750px;height: 560px;}
+.answer-cont {position: absolute;width: 800px;height: 300px;left: 140px;font-size: 20px;top: 120px;}
